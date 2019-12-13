@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const vendors = [
     'react',
     'react-dom',
+    'react-router-dom'
     // ...其它库
 ];
 const dllName = "dll";

@@ -73,6 +73,7 @@ module.exports = {
             },
         ]
     ),
+    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     filename: "[hash].bundle.js",
@@ -81,6 +82,7 @@ module.exports = {
   devServer: {
     port: 3333,
     open: true,
+    hot: true,
   },
   devtool: ISDEV?"eval-source-map":"none"
 }

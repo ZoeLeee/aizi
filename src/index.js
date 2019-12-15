@@ -1,40 +1,72 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Tab, TabBarItem, SearchBar,Grids } from 'react-weui';
-//import styles
-import 'weui';
-import 'react-weui/build/packages/react-weui.css';
+import { Button,TabBar } from 'antd-mobile';
+
 import './style.less';
 const data = Array(4).fill({
   icon: "",
   label: 'Grid',
   href: 'javascript:;'
 })
-const App = () => {
-  return (
-    <Tab type="tabbar">
-      <TabBarItem label="申请阻断药">
-        <SearchBar />
-        <div>
-          <div>
-            申请HIV试纸
-          </div>
-          <div>
-            申请HIV试纸
-          </div>
-          <div>
-            申请HIV试纸
-          </div>
-          <div>
-            申请HIV试纸1
-          </div>
-        </div>
-      </TabBarItem>
-      <TabBarItem label="我要捐款">
-        我要捐款
-      </TabBarItem>
-    </Tab>
-  );
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedTab: 'redTab',
+      hidden: false,
+      fullScreen: false,
+    };
+  }
+
+  renderContent(pageText) {
+    return (
+      <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
+       申请阻断药
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div style={ { position: 'fixed', height: '100%', width: '100%', top: 0 } }>
+        <TabBar
+          unselectedTintColor="#949494"
+          tintColor="#33A3F4"
+          barTintColor="white"
+          hidden={this.state.hidden}
+        >
+          <TabBar.Item
+          icon={null}
+            title="申请阻断药"
+            key="Life"
+            selected={this.state.selectedTab === 'blueTab'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'blueTab',
+              });
+            }}
+            data-seed="logId"
+          >
+            {this.renderContent('Life')}
+          </TabBar.Item>
+          <TabBar.Item
+          icon={null}
+            title="我要捐款"
+            key="Koubei"
+            selected={this.state.selectedTab === 'redTab'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'redTab',
+              });
+            }}
+            data-seed="logId1"
+          >
+           <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>我要捐款</div>
+          </TabBar.Item>
+        </TabBar>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById('app'));

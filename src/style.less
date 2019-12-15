@@ -1,27 +1,16 @@
 html,body,#app{
   height: 100%;
 }
-#app{
-  .weui-tabbar{
-    height: 50px;
-    align-items: center;
-    background-color: #fff;
-    .weui-tabbar__label{
-      font-size: 16px;
-      height: 100%;
-      line-height: 50px;
-      color:#000;
-    }
-    .weui-tabbar__item{
-      // align-self: stretch;
-      padding: 0;
-      height: 100%;
-    }
-    .weui-bar__item_on{
-      background: #09BB07;
-      .weui-tabbar__label{
-        color: #fff;
-      }
-    }
+  #tab-bar.demo {
+    display: flex;
+    flex-direction: column;
   }
-}
+  #tab-bar .demoName {
+    height: 40px;
+  }
+  #tab-bar .demo-preview-item .am-tab-bar {
+    background-color: white;
+  }
+  .am-tab-bar-tab .am-tab-bar-tab-icon{
+    display: none;
+  }

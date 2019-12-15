@@ -4,12 +4,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const AddAssetHtmlPlugin = require("add-asset-html-webpack-plugin");
+const theme = require('../package.json').theme;
 
-const ISDEV=process.env.NODE_ENV==='development';
+const ISDEV = process.env.NODE_ENV === 'development';
 
 const extractLess = new ExtractTextPlugin({
-    filename: "[name].[hash].css",
-    disable: ISDEV
+  filename: "[name].[hash].css",
+  disable: ISDEV
 });
 
 module.exports = {
@@ -37,23 +38,28 @@ module.exports = {
       },
       {
         test: /.less$/,
-        use:extractLess.extract({
+        use: extractLess.extract({
           use: [{
-              loader: "css-loader"
+            loader: "css-loader"
           }, {
-              loader: "less-loader"
+            loader: "less-loader",
+            options: {
+              modifyVars: theme,
+              javascriptEnabled: true
+            }
           }],
           // use style-loader in development
           fallback: "style-loader"
-      })},
+        })
+      },
       {
         test: /\.[(png)|(json)]$/,
         loader: "file-loader"
-    },
+      },
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css','.less']
+    extensions: ['.js', '.jsx', '.css', '.less']
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -64,14 +70,15 @@ module.exports = {
     extractLess,
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require('../dist/manifest.json')}
-      ),
-      new AddAssetHtmlPlugin(
-        [
-            {
-                filepath: "./dist/*.dll.js",
-            },
-        ]
+      manifest: require('../dist/manifest.json')
+    }
+    ),
+    new AddAssetHtmlPlugin(
+      [
+        {
+          filepath: "./dist/*.dll.js",
+        },
+      ]
     ),
     new webpack.HotModuleReplacementPlugin()
   ],
@@ -84,7 +91,7 @@ module.exports = {
     open: true,
     hot: true,
   },
-  devtool: ISDEV?"eval-source-map":"none"
+  devtool: ISDEV ? "eval-source-map" : "none"
 }
 
 

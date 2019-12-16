@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -66,7 +66,7 @@ module.exports = {
       template: path.join(__dirname, "../src/index.html"),
       filename: "./index.html"
     }),
-    new CleanWebpackPlugin(["dist"]),
+    new CleanWebpackPlugin([`./dist/*.bundle.js`,`./dist/*.html`,`./dist/*.css`], { root: path.resolve(__dirname, "../") }),
     extractLess,
     new webpack.DllReferencePlugin({
       context: __dirname,
@@ -87,9 +87,11 @@ module.exports = {
     path: path.resolve(__dirname, "../dist")
   },
   devServer: {
+    historyApiFallback: true,
     port: 3333,
     open: true,
     hot: true,
+    compress: true,
   },
   devtool: ISDEV ? "eval-source-map" : "none"
 }

@@ -7,11 +7,11 @@ import {
   Link
 } from "react-router-dom";
 
-import Home from './components/home';
-import Apply from './components/apply';
-import Ask from './components/ask';
-import Upload from './components/upload';
-import Check from './components/check';
+import Home from './components/home/index';
+import Apply from './components/apply/index';
+import Ask from './components/ask/index';
+import Upload from './components/upload/index';
+import Check from './components/check/index';
 
 import './style.less';
 
@@ -36,7 +36,7 @@ class App extends React.Component {
           <Route path="/ask">
             <Ask />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>

@@ -7,6 +7,9 @@ const theme = require('../package.json').theme;
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'eval-source-ma',
+  output: {
+    publicPath:"/"
+  },
   module: {
     rules: [
       {

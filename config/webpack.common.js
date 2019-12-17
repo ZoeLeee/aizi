@@ -47,14 +47,15 @@ exports.config = {
     new AddAssetHtmlPlugin(
       [
         {
-          filepath: "./dist/*.dll.js",
+          filepath:path.resolve(__dirname,  "../dist/*.dll.js"),
         },
       ]
     ),
   ],
   output: {
     filename: "[hash].bundle.js",
-    path: path.resolve(__dirname, "../dist")
+    path: path.resolve(__dirname, "../dist"),
+    publicPath: "/"
   },
 }
 

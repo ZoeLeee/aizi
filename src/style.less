@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -6,13 +6,14 @@ html,
 body,
 #app {
   height: 100%;
-  background-color:#fff;
+  background-color: #fff;
 }
 
 #app {
-  a{
+  a {
     color: #000;
   }
+
   .am-tab-bar-bar .am-tab-bar-tab {
     height: 100%;
   }
@@ -20,37 +21,52 @@ body,
   .am-tab-bar-bar .am-tab-bar-tab[data-seed="true"] {
     background-color: #14D393;
   }
-  .am-tabs-content-wrap{
+
+  .am-tabs-content-wrap {
     padding: 5%;
   }
-  .am-search{
-    background-color:#fff ;
+
+  .am-search {
+    background-color: #fff;
     border: 1px solid #000;
     border-radius: 30px;
   }
-  .home-icons{
+
+  .home-icons {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30%;
     justify-content: space-around;
-    &>div{
+
+    &>div {
       width: 45%;
       height: 100px;
-      border:1px solid #14D393;
+      border: 1px solid #14D393;
       border-radius: 10px;
       margin-bottom: 30px;
       box-shadow: 2px 2px 1px 1px #14D393;
     }
   }
+
   .am-tab-bar-tab .am-tab-bar-tab-icon {
     display: none;
   }
+
+  .am-button {
+    &>a {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+  }
 }
 
-.flex{
+.flex {
   display: flex;
 }
-.flex-col{
+
+.flex-col {
   .flex();
-  flex-direction: column;;
+  flex-direction: column;
+  ;
 }

@@ -31,7 +31,8 @@ module.exports = merge(common, {
     port: 3333,
     open: true,
     hot: true,
-    compress: true,
+    compress:true,
+    contentBase: path.resolve(__dirname, "../dist/"),
   },
   plugins: [
     new webpack.NamedModulesPlugin(),//Hot

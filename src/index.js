@@ -12,7 +12,7 @@ import Apply from './components/apply/index';
 import Ask from './components/ask/index';
 import Upload from './components/upload/index';
 import Check from './components/check/index';
-
+import UploadResult from './components/uploadResult/index';
 import './style.less';
 
 class App extends React.Component {
@@ -22,10 +22,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router basename={location.host.includes("github")?"aizi/":""}>
         <Switch>
           <Route path="/apply" component={Apply} />
           <Route path="/upload" component={Upload} />
+          <Route path="/uploadRes" component={UploadResult} />
           <Route path="/check" component={Check} />
           <Route path="/ask" component={Ask} />
           <Route exact path="/" component={Home} />

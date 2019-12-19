@@ -58,6 +58,5 @@ typings/
 .env
 
 #custom
-.vscode
 /dist*
 /package-lock.json

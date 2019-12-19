@@ -14,7 +14,7 @@ export default class UploadResult extends Component {
           </div>
         上传成功
         <div style={{color:"#999999"}}>
-          <p>结构为阴性，恭喜您！</p>
+          <p>结果为阴性，恭喜您！</p>
           <p>请放心，我们会保护您的个人隐私</p>
         </div>
       </div>

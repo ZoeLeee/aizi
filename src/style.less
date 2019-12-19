@@ -1,7 +1,10 @@
 * {
   box-sizing: border-box;
 }
-
+p{
+  margin: 0;
+  padding: 0;
+}
 html,
 body,
 #app {
@@ -42,10 +45,7 @@ body,
       width: 45%;
       height: 100px;
       line-height: 100px;
-      border: 1px solid #14D393;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      box-shadow: 2px 2px 1px 1px #14D393;
+      .common-boarder();
     }
   }
 
@@ -84,4 +84,10 @@ body,
   width: 60%;
   height: 50%;
   text-align: center;
+}
+.common-boarder{
+  border: 1px solid #14D393;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 1px 1px #14D393;
 }

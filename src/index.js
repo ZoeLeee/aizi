@@ -13,6 +13,7 @@ import Ask from './components/ask/index';
 import Upload from './components/upload/index';
 import Check from './components/check/index';
 import UploadResult from './components/uploadResult/index';
+import CheckTime from './components/checkTime/index';
 import './style.less';
 
 class App extends React.Component {
@@ -28,6 +29,7 @@ class App extends React.Component {
           <Route path="/upload" component={Upload} />
           <Route path="/uploadRes" component={UploadResult} />
           <Route path="/check" component={Check} />
+          <Route path="/checkTime" component={CheckTime} />
           <Route path="/ask" component={Ask} />
           <Route exact path="/" component={Home} />
         </Switch>

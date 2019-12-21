@@ -16,6 +16,9 @@ import UploadResult from './components/uploadResult/index';
 import CheckTime from './components/checkTime/index';
 import './style.less';
 
+import { hot } from 'react-hot-loader/root'
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +30,7 @@ class App extends React.Component {
         <Switch>
           <Route path="/apply" component={Apply} />
           <Route path="/upload" component={Upload} />
-          <Route path="/uploadRes" component={UploadResult} />
+          <Route path="/uploadRes/:type" component={UploadResult} />
           <Route path="/check" component={Check} />
           <Route path="/checkTime" component={CheckTime} />
           <Route path="/ask" component={Ask} />
@@ -38,4 +41,6 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const HotApp= hot(App);
+
+ReactDOM.render(<HotApp />, document.getElementById('app'));

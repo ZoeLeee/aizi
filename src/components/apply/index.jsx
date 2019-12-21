@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { hot } from 'react-hot-loader/root'
 import { Steps, List, Checkbox, Flex } from 'antd-mobile';
 import {
   Switch,
@@ -16,7 +15,6 @@ const Style = {
   height: "100%"
 }
 
-@hot
 export default class Apply extends Component {
   constructor(props) {
     super(props);

@@ -35,7 +35,7 @@ export default class Upload extends Component {
         <span>阴性</span>
         <div style={{height:100,background:"#14D393",margin:"20px 0"}}></div>
         <Button type="primary">
-          <Link to="/uploadRes">确定上传</Link>
+          <Link to="/uploadRes/1">确定上传</Link>
         </Button>
       </div>
     );

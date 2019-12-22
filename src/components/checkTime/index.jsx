@@ -14,7 +14,7 @@ export default class CheckTime extends Component {
   render() {
     return (
       <div className="check-time flex-col">
-        <div className="common-boarder">
+        <div className="common-border">
           <p>青艾青浦检测点</p>
           <div>
             <p>门店地址</p>
@@ -86,7 +86,7 @@ export default class CheckTime extends Component {
             height:this.state.isShow?380:0
           }}>
           <Button icon="cross"  onClick={this.hideActionSheet}></Button>
-          <div className="common-boarder info">
+          <div className="common-border info">
             <p>检测地点:</p>
             <div>上海市青浦区盈港路453号港隆国际大厦822室</div>
             <p>检测时间:</p>

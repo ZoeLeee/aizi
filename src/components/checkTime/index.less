@@ -1,26 +1,26 @@
 #app{
   .check-time{
-    padding: 20px;
     height: 100%;
+    padding: 20px;
     &>div>p{
       margin: 10px 0;
     }
     &>div>div{
       margin-bottom: 20px;
     }
-    .select-time{
-      display: flex;
-      justify-content: space-around;
+  }
+  .select-time{
+    display: flex;
+    justify-content: space-around;
+    &>div{
+      text-align: center;
       &>div{
-        text-align: center;
-        &>div{
-          margin-top: 10px;
-        }
-        &>div:nth-child(3),&>div:nth-child(4){
-          border:1px solid #14D393;
-          padding: 3px;
-          border-radius: 5px;
-        }
+        margin-top: 10px;
+      }
+      &>div:nth-child(n+3){
+        border:1px solid #14D393;
+        padding: 3px;
+        border-radius: 5px;
       }
     }
   }

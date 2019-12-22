@@ -17,6 +17,8 @@ import CheckTime from './components/checkTime/index';
 import './style.less';
 
 import { hot } from 'react-hot-loader/root'
+import AskTime from './components/askTime';
+import AskPay from './components/askPay';
 
 
 class App extends React.Component {
@@ -34,6 +36,8 @@ class App extends React.Component {
           <Route path="/check" component={Check} />
           <Route path="/checkTime" component={CheckTime} />
           <Route path="/ask" component={Ask} />
+          <Route path="/askTime" component={AskTime} />
+          <Route path="/askPay" component={AskPay} />
           <Route exact path="/" component={Home} />
         </Switch>
       </Router>

@@ -29,6 +29,16 @@ exports.config = {
         test: /\.[(png)|(json)]$/,
         loader: "file-loader"
       },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: 'images/[hash].[ext]',
+            limit: 5000,
+          }
+        }
+      },
     ]
   },
   resolve: {

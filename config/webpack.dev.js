@@ -8,7 +8,7 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'eval-source-ma',
   output: {
-    publicPath:"/"
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -18,6 +18,8 @@ module.exports = merge(common, {
           loader: "style-loader"
         }, {
           loader: "css-loader"
+        }, {
+          loader: "postcss-loader"
         }, {
           loader: "less-loader",
           options: {
@@ -34,7 +36,7 @@ module.exports = merge(common, {
     port: 3333,
     open: true,
     hot: true,
-    compress:true,
+    compress: true,
     contentBase: path.resolve(__dirname, "../dist/"),
   },
   plugins: [
